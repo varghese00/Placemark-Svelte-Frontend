@@ -1,5 +1,5 @@
 <script>
-  import MenuPic from "../assets/Menupic.jpg";
+  import MenuPic from "../assets/MenuPic.jpg";
 </script>
 
 <div class="navbar is-primary">
