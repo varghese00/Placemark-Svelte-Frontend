@@ -1,8 +1,7 @@
 <script>
 import { createEventDispatcher, getContext, onMount } from "svelte";
 import Menu from "../components/Menu.svelte";
-// import currentLocationId from "../components/Location.svelte"
-// import currentLocationStationId from "../components/Location.svelte"
+
 
 
 

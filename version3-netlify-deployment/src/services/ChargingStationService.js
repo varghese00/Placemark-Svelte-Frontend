@@ -1,16 +1,14 @@
 import axios from "axios";
-import { trusted } from "svelte/internal";
 import {user} from "../stores.js";
-// import {decodeToken} from "../utils/jwt.js"
 
 
 
 export class ChargingStationService {
-    // baseUrl="http://localhost:3000";
+    baseUrl="";
 
     constructor(baseUrl){
         console.log("HELLO");
-        this.baseUrl="http://localhost:4000";
+        this.baseUrl="https://pacific-tundra-14771.herokuapp.com";
         console.log(this.baseUrl);
         const chargingStationCredentials= localStorage.chargingstation;
         if (chargingStationCredentials){
@@ -18,8 +16,6 @@ export class ChargingStationService {
             user.set({
                 email:savedUser.email,
                 token:savedUser.token,
-                // userId: decodeToken(savedUser.token).userId,
-
             
             });
             axios.defaults.headers.common["Authorization"]="Bearer" + savedUser.token;
@@ -29,14 +25,14 @@ export class ChargingStationService {
 
     async login(email, password) {
         try {
+          alert("Login going to db")
           const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, {email, password});
+          alert(`Login response back from db ${response} `)
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
           if (response.data.success) {
             user.set({
               email: email,
               token: response.data.token,
-            //   userId: decodeToken(response.data.token).userId,
-
             });
             localStorage.chargingstation = JSON.stringify({email:email, token:response.data.token});
             return true;
@@ -52,7 +48,6 @@ export class ChargingStationService {
         user.set({
           email: "",
           token: "",
-        //   userId:"",
         });
         axios.defaults.headers.common["Authorization"] = "";
         localStorage.removeItem("chargingstation");
@@ -69,11 +64,10 @@ export class ChargingStationService {
             password: password,
           };
           await axios.post(this.baseUrl + "/api/users", userDetails);
-        //   alert(userDetails);
+          alert(userDetails);
           return true;
         } catch (error) {
-          return false;
-        }
+console.log(error)        }
       }
 
       async addStation(station) {

@@ -18,10 +18,7 @@ export let description="";
 export let locationid="";
 export let stationid="";
 export let img=""
-// export let stations={};
 let LocationList = [];
-// export let currentLocationId;
-// export let currentLocationStationId;
 
 
 
@@ -38,17 +35,9 @@ async function deleteLocation(locationid) {
 }
 
 async function getLocation(locationid) {
-        // LocationList = await ChargingStationService.getLocationsByStationId(stationid);
         let currentLocation=await ChargingStationService.getLocation(locationid);
-        // return currentLocation;
         // alert(currentLocation._id)
-        // currentLocationId=currentLocation._id;
-
         // alert(currentLocation.stationid)
-        // currentLocationStationId=currentLocation.stationid;
-
-
-        // alert("am working");
         location.replace(`/#/station/${stationid}/location/${locationid}`)
         return currentLocation;
 
@@ -115,9 +104,7 @@ async function getLocation(locationid) {
       <tr class="tr is-one-quarter">
     <td class="card-image">
     <figure>
-      <!-- <img src={img} alt=""/>  -->
       <LocationImage stationid={stationid} locationid={locationid} img={img}/>
-
     </figure>
       </td>
       </tr>

@@ -1,23 +1,14 @@
 <script>
 import { getContext,onMount,createEventDispatcher } from "svelte";
-// import stationId from "./Location.svelte"
 
 
-// import addStationLocation from "../components/List-locations.svelte";
 let errorMessage = "";
 export let stationid;
-// export let stations={};
-// // let stationid;
 
 const  ChargingStationService=getContext("ChargingStationService");
 const dispatch= createEventDispatcher();
 
-// onMount(async () => {
-//     stations=await ChargingStationService.getStation(stations._id);
-//     stations=stations.data;
-//     stationId=stations._id;
-//     return stations;
-//   })
+
 
 
 let category="";
@@ -25,8 +16,7 @@ let name="";
 let latitude="";
 let longitude="";
 let description="";
-// let location;
-// let img=""
+
 
 
 async function addStationLocation(){
@@ -56,7 +46,6 @@ async function addStationLocation(){
       alert("Something went wrong while adding station !");
     }
   
-  // return true;
 }
 
 

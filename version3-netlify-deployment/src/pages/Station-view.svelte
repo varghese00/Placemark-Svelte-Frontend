@@ -29,11 +29,6 @@ async function getLocations() {
 
 <section class="section">
 <strong>County Locations of Electric Charging Stations</strong>
-  <!-- <div class="title">
-    {{station.name}}
-  </div>
-  {{> list-locations}}
-  {{> add-location}} -->
 
 
 <ListLocations on:update={getLocations} stationid={params.id} />

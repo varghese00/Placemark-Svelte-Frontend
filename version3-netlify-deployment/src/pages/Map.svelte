@@ -5,10 +5,7 @@
   </script>
    <Menu />
 
-    <!-- <div class="column">
-      <MainNavigator/>
-    </div>
-  </div> -->
+ 
   
   <div class="box is-vcentered">
       <div class="box">

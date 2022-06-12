@@ -4,12 +4,7 @@
 
     export let name;
     export let stationid;
-    // export let refreshStationList={
-    //     async function(){
-    //     const refreshUserStations=await ChargingStationService.getUserStations();
-    //     return refreshUserStations;
-    //     }
-    // }
+
 
     const dispatch = createEventDispatcher();
     const  ChargingStationService=getContext("ChargingStationService");
@@ -20,7 +15,6 @@
     {
       dispatch("delete");
       location.reload()
-    //   return refreshStationList;
     }
   }
 

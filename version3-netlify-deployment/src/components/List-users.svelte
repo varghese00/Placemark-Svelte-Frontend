@@ -11,8 +11,6 @@ const dispatch = createEventDispatcher();
 
 onMount(async()=>{
   allUsers=await ChargingStationService.getAllUsers();
-  // allUsers=allUsers.data;
-  // return allUsers;
 }
 )
 
@@ -24,12 +22,6 @@ async function deleteUser(userid) {
              dispatch("message")
         }
     }
-
-
-//    export async function reloadUsers(event){
-//       allUsers=await ChargingStationService.getAllUsers();
-
-// }
 
 
 </script>

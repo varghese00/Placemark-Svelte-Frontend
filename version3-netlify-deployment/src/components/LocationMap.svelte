@@ -1,13 +1,13 @@
 <script>
-    import 'leaflet/dist/leaflet.css';
     import {LeafletMap} from '../services/leaflet-map';
     import {onMount,getContext} from "svelte";
-  
+    // import 'leaflet/dist/leaflet.css';
+
   const ChargingStationService=getContext("ChargingStationService")
 
     const mapConfig = {
       location: {latitude: 52.160858, longitude: -7.152420},
-      zoom: 8,
+      zoom:    8,
       minZoom: 1,
     };
     let map=null;

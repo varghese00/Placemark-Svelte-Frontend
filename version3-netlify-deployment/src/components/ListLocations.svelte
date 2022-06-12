@@ -2,7 +2,6 @@
     import {getContext, onMount,createEventDispatcher} from "svelte";
 import LocationImage from "./Location-image.svelte";
     import Location from "./Location.svelte";
-    // import stationid from "./Location.svelte"
     
 
 
@@ -11,7 +10,6 @@ import LocationImage from "./Location-image.svelte";
 
     export let stationLocations=[] ;
     export let stationid;
-    // let stationId;
 
 
     onMount(async() => {stationLocations=await ChargingStationService.getLocationsByStationId(stationid);})
@@ -39,6 +37,4 @@ export async function updateLocations() {
 {#each stationLocations as location }
   <Location locationid={location._id} name={location.name} latitude={location.latitude} longitude={location.longitude} 
   category={location.category} description={location.description} stationid={stationid} on:update={updateLocations}/>
-
-  <!-- <LocationImage stationid={stationid} locationid={location._id}/> -->
 {/each}
