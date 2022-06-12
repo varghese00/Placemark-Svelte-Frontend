@@ -1,14 +1,29 @@
 
 <script>
+import { getContext } from "svelte";
+
   import {push} from "svelte-spa-router";
   import WelcomeMenu from "../components/Welcome-menu.svelte";
 
 
+const ChargingStationService=getContext("ChargingStationService");
+
 let email="";
 let password="";
+let errorMessage="";
 
 async function login(){
+  let success = await ChargingStationService.login(email, password)
+if (success)
+{
   push("/dashboard");
+}
+else
+{
+  email = "";
+  password = "";
+  errorMessage = "Invalid Credentials";
+}
 }
 
 </script>

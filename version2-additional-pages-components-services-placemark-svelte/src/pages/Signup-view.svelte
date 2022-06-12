@@ -2,14 +2,24 @@
 
 import WelcomeMenu from "../components/Welcome-menu.svelte";
 import { push } from "svelte-spa-router";
+import {getContext} from "svelte";
 
 let firstName = "";
 let lastName = "";
 let email = "";
 let password = "";
+let errorMessage = "";
+
+const ChargingStationService=getContext("ChargingStationService");
 
 async function signup(){
-  push("/login")
+  let success= await ChargingStationService.signup(firstName, lastName, email, password);
+  if(success){ push("/login"); }
+  else{
+   alert(errorMessage)
+    errorMessage="Error Signing Up"
+  }
+  
 }
 
 </script>
@@ -48,3 +58,9 @@ async function signup(){
     </div>
   </form>
 </section>
+
+{#if errorMessage}
+  <div class="section">
+    {errorMessage}
+  </div>
+{/if}
