@@ -13,9 +13,11 @@ let password="";
 let errorMessage="";
 
 async function login(){
+  alert("checking login success")
   let success = await ChargingStationService.login(email, password)
 if (success)
 {
+  alert("going to dashboard")
   push("/dashboard");
 }
 else

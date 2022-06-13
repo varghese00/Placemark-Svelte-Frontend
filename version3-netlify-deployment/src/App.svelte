@@ -21,7 +21,9 @@
   import Router from "svelte-spa-router";
 
 
-  setContext("ChargingStationService", new ChargingStationService("https://pacific-tundra-14771.herokuapp.com"))
+  // setContext("ChargingStationService", new ChargingStationService("https://habitual-maroon-cushion.glitch.me"))
+  setContext("ChargingStationService", new ChargingStationService("http://localhost:4000"));
+
 
   let routes = {
     "/": Main,

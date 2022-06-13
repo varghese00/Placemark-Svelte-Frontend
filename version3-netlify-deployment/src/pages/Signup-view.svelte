@@ -16,7 +16,7 @@ async function signup(){
   let success= await ChargingStationService.signup(firstName, lastName, email, password);
   if(success){ push("/login"); }
   else{
-   alert(errorMessage)
+  //  alert(errorMessage)
     errorMessage="Error Signing Up"
   }
   

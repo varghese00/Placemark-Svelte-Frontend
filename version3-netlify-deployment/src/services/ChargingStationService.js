@@ -4,11 +4,12 @@ import {user} from "../stores.js";
 
 
 export class ChargingStationService {
-    baseUrl="";
+    // baseUrl="https://habitual-maroon-cushion.glitch.me";
+    baseUrl="http://localhost:4000";
 
     constructor(baseUrl){
         console.log("HELLO");
-        this.baseUrl="https://pacific-tundra-14771.herokuapp.com";
+        this.baseUrl=baseUrl;
         console.log(this.baseUrl);
         const chargingStationCredentials= localStorage.chargingstation;
         if (chargingStationCredentials){
@@ -64,8 +65,8 @@ export class ChargingStationService {
             password: password,
           };
           await axios.post(this.baseUrl + "/api/users", userDetails);
-          alert(userDetails);
-          return true;
+          alert("sign up was successful");
+          return userDetails;
         } catch (error) {
 console.log(error)        }
       }
