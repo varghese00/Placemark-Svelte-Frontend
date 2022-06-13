@@ -21,8 +21,8 @@
   import Router from "svelte-spa-router";
 
 
-  // setContext("ChargingStationService", new ChargingStationService("https://habitual-maroon-cushion.glitch.me"))
-  setContext("ChargingStationService", new ChargingStationService("http://localhost:4000"));
+  setContext("ChargingStationService", new ChargingStationService("https://habitual-maroon-cushion.glitch.me"))
+  // setContext("ChargingStationService", new ChargingStationService("http://localhost:4000"));
 
 
   let routes = {

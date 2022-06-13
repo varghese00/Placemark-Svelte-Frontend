@@ -4,8 +4,8 @@ import {user} from "../stores.js";
 
 
 export class ChargingStationService {
-    // baseUrl="https://habitual-maroon-cushion.glitch.me";
-    baseUrl="http://localhost:4000";
+    baseUrl="https://habitual-maroon-cushion.glitch.me";
+    // baseUrl="http://localhost:4000";
 
     constructor(baseUrl){
         console.log("HELLO");
